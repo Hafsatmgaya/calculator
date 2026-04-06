@@ -69,8 +69,7 @@ operators.forEach(button => {
         }
 
         operator = button.textContent;
-        display.textContent = "";
-        justCalculated = false;
+        justCalculated = true;
     });
 });
 
@@ -97,6 +96,11 @@ clear.addEventListener("click", () => {
     firstNumber = "";
     operator = null;
     justCalculated = false;
+});
+
+const backspace = document.querySelector("#backspace");
+backspace.addEventListener("click", () => {
+    display.textContent = display.textContent.slice(0, -1) || "0";
 });
 
 
